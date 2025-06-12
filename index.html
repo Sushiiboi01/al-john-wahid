@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al-John Wahid</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <style>
+        * {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .hero-text {
+            font-size: clamp(3rem, 12vw, 8rem);
+            font-weight: 900;
+            line-height: 0.9;
+            letter-spacing: -0.02em;
+        }
+
+        .section-title {
+            font-size: clamp(2.5rem, 8vw, 6rem);
+            font-weight: 900;
+            line-height: 0.9;
+            letter-spacing: -0.02em;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+        }
+
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+
+        .hover-scale:hover {
+            transform: scale(1.05);
+        }
+
+        .parallax {
+            transform: translateY(var(--scroll));
+        }
+
+        .service-card {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .typewriter {
+            overflow: hidden;
+            border-right: .15em solid #fff;
+            white-space: nowrap;
+            margin: 0 auto;
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #fff; }
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-black bg-opacity-90 backdrop-blur-sm border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="text-xl font-bold">AL-JOHN</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-gray-300 transition-colors">Home</a>
+                    <a href="#about" class="hover:text-gray-300 transition-colors">About</a>
+                    <a href="#services" class="hover:text-gray-300 transition-colors">Services</a>
+                    <a href="#contact" class="hover:text-gray-300 transition-colors">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-white">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 z-40 bg-black bg-opacity-95 hidden">
+        <div class="flex flex-col items-center justify-center h-full space-y-8 text-2xl">
+            <a href="#home" class="mobile-menu-link hover:text-gray-300 transition-colors">Home</a>
+            <a href="#about" class="mobile-menu-link hover:text-gray-300 transition-colors">About</a>
+            <a href="#services" class="mobile-menu-link hover:text-gray-300 transition-colors">Services</a>
+            <a href="#contact" class="mobile-menu-link hover:text-gray-300 transition-colors">Contact</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center gradient-bg relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-20 left-20 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+            <div class="absolute bottom-20 right-20 w-96 h-96 bg-gray-300 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="text-center z-10 px-4">
+            <div data-aos="fade-up" data-aos-duration="1000">
+                <p class="text-lg md:text-xl mb-6 text-gray-300 max-w-2xl mx-auto">
+                    Here's a glimpse of my creations. This showcases my designs for my brother's small business as well as my personal projects. I enjoy crafting simple yet attractive designs. I always look forward to tackling new projects!
+                </p>
+            </div>
+
+            <div data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
+                <h1 class="hero-text text-white text-shadow mb-8">
+                    PROJECT<br>
+                    <span class="text-gray-400">PORTFOLIO</span>
+                </h1>
+            </div>
+
+            <div data-aos="fade-up" data-aos-delay="600" data-aos-duration="1000">
+                <a href="#about" class="inline-flex items-center px-8 py-4 bg-white text-black font-semibold rounded-full hover:bg-gray-200 transition-all duration-300 hover-scale">
+                    Explore My Work
+                    <i class="fas fa-arrow-down ml-2"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 floating">
+            <i class="fas fa-chevron-down text-2xl text-gray-400"></i>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="min-h-screen flex items-center justify-center bg-gray-900 relative">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <div data-aos="fade-right" data-aos-duration="1000">
+                <h2 class="text-2xl md:text-3xl font-light mb-4 text-gray-400">HELLO, I'M</h2>
+            </div>
+
+            <div data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
+                <h1 class="section-title text-white mb-8">
+                    AL-JOHN WAHID
+                </h1>
+            </div>
+
+            <div data-aos="fade-left" data-aos-delay="600" data-aos-duration="1000">
+                <div class="text-center">
+                    <p class="text-2xl md:text-3xl font-semibold text-white">BS IT 2-2</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="min-h-screen flex items-center justify-center gradient-bg">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right" data-aos-duration="1000">
+                    <h2 class="section-title text-white mb-8">
+                        ABOUT ME
+                    </h2>
+                </div>
+
+                <div data-aos="fade-left" data-aos-delay="300" data-aos-duration="1000">
+                    <div class="text-lg md:text-xl leading-relaxed text-gray-300">
+                        <p class="mb-6">
+                            I began my career in graphic design by assisting my brother's small business, Holy Kicks. I was motivated by that experience to produce designs that are both lovely and straightforward.
+                        </p>
+                        <p class="mb-6">
+                            I am now enthusiastic to assist small and large businesses in bringing their concepts to life as a graphic designer and virtual assistant.
+                        </p>
+                        <p>
+                            The tools I've used for being a self taught virtual assistant are google sheets, google workspace, and calendar.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="min-h-screen py-20 bg-black">
+        <div class="max-w-7xl mx-auto px-4">
+            <div data-aos="fade-up" data-aos-duration="1000" class="text-center mb-16">
+                <h2 class="section-title text-white mb-8">
+                    SERVICES<br>
+                    <span class="text-gray-400">OFFERED</span>
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Virtual Assistant -->
+                <div data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" class="service-card rounded-2xl p-8 hover-scale">
+                    <div class="text-center mb-6">
+                        <i class="fas fa-laptop-code text-4xl text-white mb-4"></i>
+                        <h3 class="text-2xl font-bold text-white mb-4 border border-white rounded-full py-2 px-6 inline-block">
+                            VIRTUAL ASSISTANT
+                        </h3>
+                    </div>
+                    <p class="text-gray-300 text-lg leading-relaxed">
+                        Need an extra pair of hands? I help busy professionals stay organized, meet deadlines, and run smoother businesses—remotely and efficiently.
+                    </p>
+                </div>
+
+                <!-- Social Media Manager -->
+                <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000" class="service-card rounded-2xl p-8 hover-scale">
+                    <div class="text-center mb-6">
+                        <i class="fas fa-share-alt text-4xl text-white mb-4"></i>
+                        <h3 class="text-2xl font-bold text-white mb-4 border border-white rounded-full py-2 px-6 inline-block">
+                            SOCIAL MEDIA MANAGER
+                        </h3>
+                    </div>
+                    <p class="text-gray-300 text-lg leading-relaxed">
+                        In need of someone who can manage your social media business or outreach influencers? I can do it for you. A self taught, SMM with skills in (Social media posts, hashtag research, scheduling posts, DM outreach and more.)
+                    </p>
+                </div>
+
+                <!-- Graphic Design -->
+                <div data-aos="fade-up" data-aos-delay="600" data-aos-duration="1000" class="service-card rounded-2xl p-8 hover-scale">
+                    <div class="text-center mb-6">
+                        <i class="fas fa-paint-brush text-4xl text-white mb-4"></i>
+                        <h3 class="text-2xl font-bold text-white mb-4 border border-white rounded-full py-2 px-6 inline-block">
+                            GRAPHIC DESIGN
+                        </h3>
+                    </div>
+                    <p class="text-gray-300 text-lg leading-relaxed">
+                        Simple doesn't mean boring. I design bold, effective visuals that make your brand stand out—on socials, in print, and beyond.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="min-h-screen flex items-center justify-center bg-gray-900">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <div data-aos="fade-up" data-aos-duration="1000">
+                <h2 class="section-title text-white mb-12">
+                    LET'S WORK<br>
+                    <span class="text-gray-400">TOGETHER</span>
+                </h2>
+            </div>
+
+            <div data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000" class="mb-12">
+                <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                    Ready to bring your vision to life? I'm here to help you create something amazing. Let's discuss your next project!
+                </p>
+
+                <div class="flex flex-wrap justify-center gap-6">
+                    <a href="mailto:aljohn.wahid01@gmail.com" class="inline-flex items-center px-8 py-4 bg-white text-black font-semibold rounded-full hover:bg-gray-200 transition-all duration-300 hover-scale">
+                        <i class="fas fa-envelope mr-3"></i>
+                        Get In Touch
+                    </a>
+
+                    <a href="assets/Aljohn_Wahid_Resume.pdf" class="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded-full hover:bg-white hover:text-black transition-all duration-300 hover-scale">
+                        <i class="fas fa-download mr-3"></i>
+                        Download CV
+                    </a>
+                </div>
+            </div>
+
+            <div data-aos="fade-up" data-aos-delay="600" data-aos-duration="1000">
+                <div class="flex justify-center space-x-8 text-2xl">
+                    <a href="https://ph.linkedin.com/in/al-john-wahid-2528bb286" class="text-gray-400 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://facebook.com/thisaintal" class="text-gray-400 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Thank You Section -->
+    <section class="py-20 bg-black">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <div data-aos="zoom-in" data-aos-duration="1000">
+                <h2 class="section-title text-white">
+                    THANK YOU
+                </h2>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-8">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-gray-400">
+                © 2025 Al-John Wahid. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Parallax effect
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.parallax');
+
+            parallaxElements.forEach(element => {
+                const speed = element.dataset.speed || 0.5;
+                element.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+
+        // Add scroll progress indicator
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+
+            // You can add a progress bar here if desired
+        });
+
+        // Add typewriter effect to hero text
+        function typeWriter(element, text, speed = 100) {
+            let i = 0;
+            element.innerHTML = '';
+
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+
+            type();
+        }
+
+        // Intersection Observer for additional animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
